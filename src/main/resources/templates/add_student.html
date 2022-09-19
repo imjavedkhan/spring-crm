@@ -14,31 +14,30 @@
 <body>
 
 <div class="container">
-    <h3>Add New Student</h3>
+    <h3 class="h3">Add New Student</h3>
     <form action="#" th:action="@{save/student}" th:object="${new_student}" method="POST">
 
         <table border="0" cellpadding="10">
             <!-- Add hidden form field to handle update -->
             <input type="hidden" th:field="*{id}" />
             <tr>
-                <td>Student First Name</td>
-                <td><input type="text" th:field="*{firstname}" /></td>
+                <div class="input-group mb-3">
+                <td><input type="text" th:field="*{firstname}" placeholder="First Name" /></td>
+                </div>
             </tr>
             <tr>
-                <td>Student Last Name</td>
-                <td><input type="text" th:field="*{lastname}" /></td>
+                <td><input type="text" th:field="*{lastname}" placeholder="Last Name"/></td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td><input type="text" th:field="*{email}" /></td>
+                <td><input type="text" th:field="*{email}" placeholder="Email" /></td>
             </tr>
             <tr>
-                <td colspan="2"><button type="submit">Save</button> </td>
+                <td colspan="2"><button type="submit" class="btn btn-outline-success">Save</button> </td>
             </tr>
         </table>
     </form>
     <hr>
-    <a th:href="@{/}">Back to Student List</a>
+    <a th:href="@{/}" class="btn btn-primary stretched-link">Back to Student List</a>
 </div>
 
 </body>
